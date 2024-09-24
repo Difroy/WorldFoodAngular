@@ -6,25 +6,15 @@ import { routes } from './app.routes';
 import { MenuComponent } from "./menu/menu.component";
 import { ProductComponent } from "./product/product.component";
 
-/*@Component({
+@Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, ProductComponent, MenuComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
-})*/
-
-@Component({
-  selector: 'app-root',
-  standalone: true,  // Indica che è un componente standalone
-  imports: [RouterOutlet, MenuComponent, ProductComponent],  // Importa i componenti e i moduli
-  providers: [
-    provideHttpClient(),  // Fornisce HttpClient
-    provideRouter(routes),  // Fornisce il router con le rotte configurate
-  ],
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
 })
+
+
 
 export class AppComponent
 {

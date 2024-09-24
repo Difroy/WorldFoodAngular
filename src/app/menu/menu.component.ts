@@ -18,7 +18,7 @@ export class MenuComponent
 
     constructor(private productService:ProductService){}
 
-    
+    //è un metodo particolare che fa parte del lifeCycle del componente. (ngOnInit)
     ngOnInit():void
     {
         console.log('Sono stato chiamato');
@@ -26,6 +26,7 @@ export class MenuComponent
         this.loadProducts();
     }
   
+    //Io so di non sapere...
     products:Product[] = [];
 
     key:string=''; // conterrà il valore di ricerca
