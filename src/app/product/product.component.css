@@ -1,5 +1,36 @@
-.product div
+.product
 {
-    border: 1pc solid black;
+    border:1px solid black;
 
+}
+
+.product DIV
+{
+    font-style:italic;
+
+}
+
+.product .name
+{
+    padding-top:5px;
+    padding-left:5px;
+    font-size:130%;    
+}
+
+.imagebox
+{
+    padding:5px;
+
+    text-align:center;
+}
+
+.imagebox IMG
+{
+    width:80px;
+    height:80px;
+}
+
+.info, .detail .w3-rest
+{
+    padding-left:5px;
 }
