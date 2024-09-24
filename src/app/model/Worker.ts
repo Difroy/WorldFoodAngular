@@ -3,7 +3,7 @@ export interface Worker
 id: number;
 name: string;
 surname: string;
-dateOfBirth: Date;
+dateOfBirth: string;
 gender: string;
 profession: string;
 salary: number;

@@ -1,1 +1,19 @@
-<p>worker works!</p>
+<div class="worker">
+    <div class="w3-row">
+        <div class="w3-rest">
+            <div class="name">{{worker.name}} {{worker.surname}}</div>
+            <div class="info">
+                {{worker.profession}} - {{worker.salary}} &euro;
+                <button class="w3-teal w3-btn" (click)="toggleDetail()">Detail</button>
+            </div>
+        </div>
+    </div>
+    <div class="w3-row detail" *ngIf="fullview">
+        <div class="w3-col l2 l2"> &nbsp; </div>
+        <div class="w3-rest">
+            Date of Birth: {{worker.dateOfBirth}} <br />
+            Gender: {{worker.gender}} <br />
+            Bio: {{worker.bio}} <br />
+        </div>
+    </div>
+</div>
