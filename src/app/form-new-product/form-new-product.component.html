@@ -1,25 +1,45 @@
-<h2 class="w3-teal">New Product</h2>
-<form>
-
-<input type="text" name="name" [(ngModel)]="product.name" class="w3-input" />
-
-<input type="text" name="description [(ngModel)]="product.description" class="w3-input" />
-
-<!-- 
-Ogni casella di testo deve avere un name univoco
-
--->
-<input type="text" name="ingredients" [(ngModel)]="product.ingredients" class="w3-input" />
-<input type="number" name="carbs" [(ngModel)]="product.carbs" class="w3-input" />
-<input type="number" name="proteins" [(ngModel)]="product.proteins" class="w3-input" />
-<input type="number" name="fats" [(ngModel)]="product.fats" class="w3-input" />
-<input type="number" name="price" [(ngModel)]="product.price" class="w3-input" />
-<select>
-
+<div class="formNewProduct">
+    <h2 class="w3-teal"> New Product</h2>
+    <form #f="ngForm">
+        Name 
+        <!-- quello che succede a questa casella di testo
+        succede al campo name dell'oggetto product
+        se l'utente la modifica
+        modifica il campo name dell'oggetto 
+        -->
+        <input type="text" name="name" [(ngModel)]="product.name" class="w3-input" required/>
+        Description
+        <!-- la lezione riprende in modalità read only-->
+         <!-- siete pregati di discuterne con la vostra divinità di riferimento
+          nel caso. 
+          
+          -->
+        <input type="text" name="description" [(ngModel)]="product.description" class="w3-input" required />
+        <!--
+            Ogni casella di testo deve avere un name univoco nella form
+            O il giochino non funziona...
+        -->
+        Ingredients
+        <input type="text" name="ingredients" [(ngModel)]="product.ingredients" class="w3-input" required/>
+        Image
+        <input type="text" name="image" [(ngModel)]="product.image" class="w3-input"  />
+        Carbs
+        <input type="number" name="carbs" [(ngModel)]="product.carbs" class="w3-input" min="0" />
+        Proteins
+        <input type="number" name="proteins" [(ngModel)]="product.proteins" class="w3-input" min="0" />
+        Fats
+        <input type="number" name="fats" [(ngModel)]="product.fats" class="w3-input" min="0"/>
+        Price
+        <input type="number" name="price" [(ngModel)]="product.price" class="w3-input" min="0"/>
+        Vegan
+        <select class="w3-input" name="vegan" [(ngModel)]="product.vegan" required>
+            <option value="">...</option>
+            <option value="true">YES</option>
+            <option value="false">NO</option>
+        </select>
+        <!-- not working yet...-->
+        <!-- ma il metodo save non esiste ancora!-->
+        <button [disabled]="!f.valid" (click)="save()" class="w3-teal w3-btn">Save</button>
     
-
-
-</select>
-
-
-</form>
+    </form>
+</div>
