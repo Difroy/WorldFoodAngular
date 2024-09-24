@@ -1,0 +1,24 @@
+<div class="product">
+    <div class="w3-row">
+        <div class="w3-col m2 l2 imagebox" >
+            <img [src]="imagePath()" />            
+        </div>
+        <div class="w3-rest">
+            <div class="name">{{product.name}}</div>
+            <div class="info">
+                {{product.description}} - {{product.price}} &euro;
+                <button class="w3-teal w3-btn" (click)="toggleDetail()" >Detail </button>
+            </div>
+        </div>
+    </div>
+    <div class="w3-row detail" *ngIf="fullview">
+        <div class="w3-col l2 l2"> &nbsp; </div>
+        <div class="w3-rest">
+            Carbs: {{product.carbs}} grams <br />
+            Proteins: {{product.proteins}} grams <br />
+            Fats: {{product.fats}} grams <br />
+            Ingredients: {{product.ingredients}} <br />
+            Calories: {{calories()}}
+        </div>
+    </div>
+</div>
