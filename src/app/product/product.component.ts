@@ -1,16 +1,37 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Product } from '../model/Product';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [],
+  imports: [NgIf],
   templateUrl: './product.component.html',
   styleUrl: './product.component.css'
 })
 export class ProductComponent 
 {
-  id:1, name:'Arepa', carbs:70, proteins:6, fats:2, price:3, vegan:true, description: 'Arepa venezuelana', ingredients: 'Mais, acqua, sale', image: 'arepa.jpeg';
 
+    @Input()
+    product!:Product;
+
+    fullview:boolean = false;
+
+    imagePath():string
+    {
+        return 'assets/images/'+this.product.image;
+
+    }
+
+    toggleDetail():void
+    {
+        this.fullview = !this.fullview;
+    }
+
+    calories():number 
+    {
+        return this.product.carbs * 3 + this.product.proteins * 3 + this.product.fats * 9;
+    }
+      
 
 }
