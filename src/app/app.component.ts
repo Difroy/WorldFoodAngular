@@ -1,17 +1,31 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { ProductComponent } from "./product/product.component";
 import { Product } from './model/Product';
+import { provideHttpClient } from '@angular/common/http';
+import { provideRouter, RouterOutlet } from '@angular/router';
+import { routes } from './app.routes';
 import { MenuComponent } from "./menu/menu.component";
-import { HttpClientModule } from '@angular/common/http';
+import { ProductComponent } from "./product/product.component";
+
+/*@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [RouterOutlet, ProductComponent, MenuComponent],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css'
+})*/
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, ProductComponent, MenuComponent, HttpClientModule],
+  standalone: true,  // Indica che è un componente standalone
+  imports: [RouterOutlet, MenuComponent, ProductComponent],  // Importa i componenti e i moduli
+  providers: [
+    provideHttpClient(),  // Fornisce HttpClient
+    provideRouter(routes),  // Fornisce il router con le rotte configurate
+  ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
+
 export class AppComponent
 {
 
