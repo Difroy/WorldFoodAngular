@@ -1,20 +1,17 @@
 import { Component } from '@angular/core';
-import { Product } from './model/Product';
-import { provideHttpClient } from '@angular/common/http';
-import { provideRouter, RouterOutlet } from '@angular/router';
-import { routes } from './app.routes';
-import { MenuComponent } from "./menu/menu.component";
+import { RouterOutlet } from '@angular/router';
 import { ProductComponent } from "./product/product.component";
+import { Product } from './model/Product';
+import { MenuComponent } from "./menu/menu.component";
+import { FormNewProductComponent } from "./form-new-product/form-new-product.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ProductComponent, MenuComponent],
+  imports: [RouterOutlet, ProductComponent, MenuComponent,  FormNewProductComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-
-
 
 export class AppComponent
 {

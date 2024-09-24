@@ -49,9 +49,12 @@ IO RESTITUISCO UNA CONNESSIONE DA CUI UN GIORNO FORSE USCIRA UN PRODOTTO
 
 newProduct(product:Product):Observable<Product>{
 
-return this.http
+return this.http.post<Product>(this.url,      product);
 
-}
+                          //indirizzo API   CORPO REQUEST
+
+// il post mi restituisce un oggetto di tipo Product
+ }
 
 
 
