@@ -1,1 +1,21 @@
-<p>menu works!</p>
+<div class="menu">
+    <h2 class="w3-teal"> Food for the World</h2>
+    <form>
+        <input 
+                type="text" 
+                class="w3-input" 
+                placeholder="Cerca un piatto..."  
+                name="key"
+                [(ngModel)]="key"
+        />
+    </form>
+    <div class="productlist">
+        <!--
+            for(Product p:products)
+                new ProductComponent(p);
+        -->
+        <app-product *ngFor="let p of getProducts()" [product]="p"></app-product>
+
+    </div>
+</div>
+
