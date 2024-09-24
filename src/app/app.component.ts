@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 export class AppComponent
 {
 
+  title = 'WorldFood';
   arepa:Product = 
   {
       id:1, name:'Arepa', carbs:70, proteins:6, fats:2, price:3, 
