@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Product } from '../model/Product';
+import { FormsModule } from '@angular/forms';
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-form-new-product',
