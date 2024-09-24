@@ -3,10 +3,11 @@ import { Product } from '../model/Product';
 import { FormsModule } from '@angular/forms';
 import { ProductService } from '../product.service';
 
+
 @Component({
   selector: 'app-form-new-product',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './form-new-product.component.html',
   styleUrl: './form-new-product.component.css'
 })
